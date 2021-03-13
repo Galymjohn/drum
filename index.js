@@ -16,8 +16,9 @@ for (var i = 0; i < numberOfDrumButtons; i++) {
 });
 }
 // detecting keyboard press (listening to keypress addEvent)
-document.addEventListener("keydown", function(event){  //event listener added to the entire document
-  mak(event.key);         //make sound is in both functions and is sent to the sound switch.
+document.addEventListener("keypress", function(event){  //event listener added to the entire document
+  makeSound(event.key);
+  buttonAnimation(event.key);        //make sound is in both functions and is sent to the sound switch.
 });
 
 //this is where the key values are sent to play the relivent sound.
