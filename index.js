@@ -13,6 +13,7 @@ for (var i = 0; i < numberOfDrumButtons; i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", function (){
     var buttonInnerHTML = this.innerHTML;
     makeSound(buttonInnerHTML); //make sound is in both functions and is sent to the sound switch.
+    buttonAnimation(buttonInnerHTML);
 });
 }
 // detecting keyboard press (listening to keypress addEvent)
@@ -61,5 +62,13 @@ function makeSound(key){
     // this.style.color = "white";
   // var tom1 = new Audio("sounds/tom-1.mp3");
   // tom1.play();  //   tom1.play()
+  }
 }
+
+function buttonAnimation(currentKey) {
+  var activeButton = document.querySelector("." + currentKey);
+  activeButton.classList.add("pressed");
+  setTimeout(function(){
+    activeButton.classList.remove("pressed");
+  }, 100);
 }
